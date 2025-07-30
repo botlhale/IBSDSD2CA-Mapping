@@ -1,6 +1,0 @@
-dsd_code,value,description,formula
-CAA,22401.25,"Claims, All Instruments, All Sectors (Nationality)",6+17+(228+229+230+231+232+233+235)
-CGB,12500.25,"Claims, Loans & Deposits, Banks (Nationality)",4+376
-CAF,9900.75,"Claims, All Instruments, on Non-bank Fin. Inst. (Nationality)",221+(17-517)+228+229+231+232+233+235
-CGA,14200.25,"Claims, All Instruments, Banks (Nationality)",4+376+228+229
-CGC,1700.0,"Claims, Securities, Banks (Nationality)",228+229
