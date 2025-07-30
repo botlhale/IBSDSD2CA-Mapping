@@ -1,0 +1,7 @@
+dsd_code,value,description,formula
+CAF,14000.75,"Claims, All Instruments, on Non-bank Fin. Inst.",201+208+215+221+(17-517)+230
+CGB,12500.25,"Claims, Loans & Deposits, Banks (Total)",4+376
+CGA,18000.25,"Claims, All Instruments, Banks (Total)",4+376+201+208
+CAA,17501.25,"Claims, All Instruments, All Sectors (Residency)",6+17
+CGC,5500.0,"Claims, Securities, Banks",201+208
+CAB,17500.25,"Claims, Loans & Deposits, All Sectors",4+376+221+230

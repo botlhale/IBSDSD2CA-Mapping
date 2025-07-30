@@ -1,0 +1,62 @@
+# LBS Mapping Rules
+# This file defines the mapping formulas from GQ codes to DSD codes
+# Based on Table 3 and Table 4 from the specification
+
+# LBS Residency (LBSR) Mappings
+lbsr_mappings:
+  - dsd_code: "CAF"
+    description: "Claims, All Instruments, on Non-bank Fin. Inst."
+    formula: "201+208+215+221+(17-517)+230"
+    
+  - dsd_code: "CGB"
+    description: "Claims, Loans & Deposits, Banks (Total)"
+    formula: "4+376"
+    
+  - dsd_code: "CGA"
+    description: "Claims, All Instruments, Banks (Total)"
+    formula: "4+376+201+208"
+    
+  - dsd_code: "CAA"
+    description: "Claims, All Instruments, All Sectors (Residency)"
+    formula: "6+17"
+    
+  - dsd_code: "CGC"
+    description: "Claims, Securities, Banks"
+    formula: "201+208"
+    
+  - dsd_code: "CAB"
+    description: "Claims, Loans & Deposits, All Sectors"
+    formula: "4+376+221+230"
+
+# LBS Nationality (LBSN) Mappings  
+lbsn_mappings:
+  - dsd_code: "CAA"
+    description: "Claims, All Instruments, All Sectors (Nationality)"
+    formula: "6+17+(228+229+230+231+232+233+235)"
+    
+  - dsd_code: "CGB"
+    description: "Claims, Loans & Deposits, Banks (Nationality)"
+    formula: "4+376"
+    
+  - dsd_code: "CAF"
+    description: "Claims, All Instruments, on Non-bank Fin. Inst. (Nationality)"
+    formula: "221+(17-517)+228+229+231+232+233+235"
+    
+  - dsd_code: "CGA"
+    description: "Claims, All Instruments, Banks (Nationality)"
+    formula: "4+376+228+229"
+    
+  - dsd_code: "CGC"
+    description: "Claims, Securities, Banks (Nationality)"
+    formula: "228+229"
+
+# Metadata
+metadata:
+  version: "1.0"
+  last_updated: "2024-01-01"
+  description: "Mapping rules from GQ codes to BIS LBS DSD codes"
+  notes:
+    - "LBSR mappings are based on residency principle"
+    - "LBSN mappings are based on nationality principle"
+    - "Formulas use basic arithmetic operations (+, -, *, /, parentheses)"
+    - "Missing GQ codes default to 0 in calculations"

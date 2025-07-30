@@ -1,0 +1,96 @@
+# GQ Structure Definition
+# This file defines the structure and meaning of GQ return codes
+# Based on Table 2 from the specification
+
+gq_codes:
+  - code: 6
+    description: "Total claims (Immediate risk basis)"
+    part: I
+    category: Total
+    
+  - code: 17
+    description: "Total Inter-office positions (Asset)"
+    part: I
+    category: Inter-office
+    
+  - code: 221
+    description: "Loans to Non-banks, Financial institutions"
+    part: I
+    category: Loans
+    counterparty: F
+    
+  - code: 4
+    description: "Claims on Banks (Domestic)"
+    part: I
+    category: Claims
+    counterparty: Banks
+    
+  - code: 376
+    description: "Claims on Banks (Foreign)"
+    part: I
+    category: Claims
+    counterparty: Banks
+    
+  - code: 201
+    description: "Securities, Government"
+    part: I
+    category: Securities
+    counterparty: Government
+    
+  - code: 208
+    description: "Securities, Corporate"
+    part: I
+    category: Securities
+    counterparty: Corporate
+    
+  - code: 215
+    description: "Securities, Other"
+    part: I
+    category: Securities
+    counterparty: Other
+    
+  - code: 517
+    description: "Total Inter-office positions (Liability)"
+    part: I
+    category: Inter-office
+    
+  - code: 230
+    description: "Other Claims"
+    part: I
+    category: Other
+    
+  - code: 228
+    description: "Claims, Type A"
+    part: I
+    category: Claims
+    
+  - code: 229
+    description: "Claims, Type B"
+    part: I
+    category: Claims
+    
+  - code: 231
+    description: "Claims, Type C"
+    part: I
+    category: Claims
+    
+  - code: 232
+    description: "Claims, Type D"
+    part: I
+    category: Claims
+    
+  - code: 233
+    description: "Claims, Type E"
+    part: I
+    category: Claims
+    
+  - code: 235
+    description: "Claims, Type F"
+    part: I
+    category: Claims
+
+# Metadata
+metadata:
+  version: "1.0"
+  last_updated: "2024-01-01"
+  description: "GQ return structure definition for mapping to BIS LBS DSD"
