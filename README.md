@@ -4,20 +4,34 @@
 
 # BIS GQ Mapper (bis-gq-mapper)
 
-A Python utility to automate the mapping of the Canadian regulatory return GM_GQ to the Bank for International Settlements (BIS) Locational Banking Statistics (LBS) Data Structure Definition (DSD).
+**From National Granularity to Global Standards**
+
+A configurable, testable, and auditable Python command-line utility that converts Canadian regulatory return GM_GQ data to Bank for International Settlements (BIS) Locational Banking Statistics (LBS) Data Structure Definition (DSD) format.
+
+**Strategic Positioning**: A configurable, testable, and auditable bridge that converts national granular regulatory inputs into standardized BIS LBS outputs—reducing operational risk and accelerating reporting cycles.
 
 ## Purpose
 
-This tool translates the granular data points from the quarterly GQ return into the aggregated format required for BIS LBS Residency (LBSR) and LBS Nationality (LBSN) reporting. It is designed to be maintainable by subject matter experts with minimal code changes.
+The BIS GQ Mapper serves as a strategic bridge that transforms granular Canadian GM_GQ regulatory return data into standardized BIS Locational Banking Statistics (LBS) outputs. This tool automates a historically manual, error-prone mapping process while delivering regulatory-grade validation, extensibility, and safe formula evaluation.
+
+**Core Value Proposition:**
+- Ingests granular Canadian GM_GQ regulatory return data
+- Applies configuration-driven (YAML) transformation & aggregation rules  
+- Outputs BIS LBS DSD compliant datasets (Residency LBSR / Nationality LBSN)
+- Reduces operational risk and accelerates reporting cycles through automation
+
+The system is designed to be maintainable by subject matter experts with minimal code changes, ensuring long-term sustainability and regulatory compliance.
 
 ## Key Features
 
-- **Automated Mapping**: Converts GQ return data to BIS LBS DSD format using configurable rules
-- **Dual Report Types**: Supports both LBSR (residency-based) and LBSN (nationality-based) reporting
-- **Configuration-Driven**: Mapping rules and GQ structure definitions are externalized in YAML files
-- **Validation**: Built-in validation of mapping rules and data integrity
-- **Extensible**: Easy to update for new GQ codes or mapping requirements
-- **Robust**: Handles missing data gracefully and provides detailed error reporting
+- **Automated Mapping**: Eliminates manual, error-prone processes by converting GQ return data to BIS LBS DSD format using configurable rules
+- **Regulatory-Grade Validation**: Built-in validation of mapping rules and data integrity with comprehensive error reporting
+- **Dual Report Types**: Supports both LBSR (residency-based) and LBSN (nationality-based) reporting standards
+- **Configuration-Driven Architecture**: Mapping rules and GQ structure definitions are externalized in YAML files for flexibility
+- **Safe Formula Evaluation**: Sanitized expression evaluation prevents code injection while enabling complex calculations
+- **Extensible Design**: Easy to update for new GQ codes or mapping requirements without code changes
+- **Auditable Processing**: Comprehensive logging and traceability for regulatory compliance
+- **Robust Error Handling**: Graceful management of missing data with detailed diagnostic reporting
 
 ## Project Structure
 
@@ -48,7 +62,7 @@ bis-gq-mapper/
 1. **Clone the repository:**
    ```bash
    git clone <repository_url>
-   cd IBSDSD2CA-Mapping
+   cd IBSDSD2CA-Mapping  # Note: Repository directory structure
    ```
 
 2. **Install Python dependencies:**
@@ -56,9 +70,11 @@ bis-gq-mapper/
    pip install -r requirements.txt
    ```
 
-3. **Verify installation:**
+3. **Verify installation and compliance:**
    ```bash
    python main.py --help
+   # Run validation checks
+   python -m pytest  # Ensure all regulatory compliance tests pass
    ```
 
 ## Usage
@@ -229,19 +245,21 @@ The application handles various error conditions gracefully:
 
 ### Getting Help
 
-1. Run with `--verbose` flag for detailed output
-2. Use `--validate-only` to check configuration without processing
-3. Check the test files for examples of expected data formats
+1. Run with `--verbose` flag for detailed operational output and audit trail
+2. Use `--validate-only` to perform regulatory compliance checks without processing
+3. Review test files for examples of expected data formats and validation patterns
+4. Consult configuration files for mapping rule structure and GQ code definitions
 
 ## Architecture
 
 ### Design Principles
 
-1. **Separation of Concerns**: Mapping logic is separate from execution code
-2. **Configuration-Driven**: Business rules are externalized in YAML files
-3. **Type Safety**: Strong typing with dataclasses and type hints
-4. **Testability**: Comprehensive test suite with >90% coverage
-5. **Maintainability**: Clear structure and documentation
+1. **Separation of Concerns**: Mapping logic is separate from execution code for maintainability
+2. **Configuration-Driven**: Business rules are externalized in YAML files for flexibility
+3. **Type Safety**: Strong typing with dataclasses and type hints for reliability  
+4. **Testability**: Comprehensive test suite with >90% coverage for confidence
+5. **Auditability**: Clear traceability and logging for regulatory compliance
+6. **Security**: Safe formula evaluation and input validation to prevent vulnerabilities
 
 ### Core Components
 
@@ -252,9 +270,10 @@ The application handles various error conditions gracefully:
 
 ### Security Features
 
-- **Safe Formula Evaluation**: Sanitized expression evaluation prevents code injection
-- **Input Validation**: Comprehensive validation of files and configuration
-- **Error Boundaries**: Graceful handling of invalid data
+- **Safe Formula Evaluation**: Sanitized expression evaluation with restricted character sets prevents code injection
+- **Comprehensive Input Validation**: Rigorous validation of files and configuration for data integrity
+- **Error Boundaries**: Graceful handling of invalid data with secure fallback mechanisms
+- **Audit Trail**: Complete logging of transformations for regulatory compliance and troubleshooting
 
 ## Contributing
 
