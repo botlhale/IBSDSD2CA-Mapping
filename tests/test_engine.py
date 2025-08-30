@@ -244,3 +244,30 @@ class TestFormulaEvaluation:
         for formula in formulas:
             result = engine._evaluate_formula(formula, data)
             assert result == 30.0
+    
+    def test_substring_code_replacement_bug(self, temp_rules_file):
+        """Test fix for substring replacement bug in formula evaluation.
+        
+        This tests the fix for the issue where GQ codes that are substrings
+        of replacement values caused invalid syntax errors. For example,
+        when code 4 gets replaced with 376.0 and then code 376 gets replaced,
+        it would incorrectly replace the '376' in '376.0'.
+        """
+        engine = MappingEngine(temp_rules_file)
+        
+        # Test case that triggered the original bug
+        # Code 4 -> 376.0, Code 376 -> 0.0 (missing)
+        data = {4: 376.0}
+        result = engine._evaluate_formula('4+376', data)
+        assert result == 376.0  # 376.0 + 0.0
+        
+        # Test case with codes of same length that could conflict
+        # Code 228 -> 229.0, Code 229 -> 0.0 (missing) 
+        data = {228: 229.0}
+        result = engine._evaluate_formula('228+229', data)
+        assert result == 229.0  # 229.0 + 0.0
+        
+        # Test more complex case with multiple overlapping codes
+        data = {4: 100.0, 40: 200.0, 400: 300.0}
+        result = engine._evaluate_formula('4+40+400', data)
+        assert result == 600.0  # 100.0 + 200.0 + 300.0
