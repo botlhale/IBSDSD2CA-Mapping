@@ -2,9 +2,14 @@
 """
 BIS GQ Mapper - Command Line Interface
 
-A Python utility to automate the mapping of the Canadian regulatory return GM_GQ 
-to the Bank for International Settlements (BIS) Locational Banking Statistics (LBS) 
-Data Structure Definition (DSD).
+From National Granularity to Global Standards
+
+A configurable, testable, and auditable Python command-line utility that converts 
+Canadian regulatory return GM_GQ data to Bank for International Settlements (BIS) 
+Locational Banking Statistics (LBS) Data Structure Definition (DSD) format.
+
+Automates historically manual, error-prone mapping with validation, extensibility, 
+and safe formula evaluation to reduce operational risk and accelerate reporting cycles.
 """
 
 import argparse
@@ -50,7 +55,7 @@ def validate_inputs(args) -> None:
 def main():
     """Main entry point for the CLI application."""
     parser = argparse.ArgumentParser(
-        description="BIS GQ Mapper - Automate mapping of GM_GQ to BIS LBS DSD",
+        description="BIS GQ Mapper - From National Granularity to Global Standards. A configurable, testable, and auditable bridge converting Canadian GM_GQ regulatory data to BIS LBS DSD format.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -65,20 +70,20 @@ Examples:
     parser.add_argument(
         '--gq-file',
         required=True,
-        help='Path to the GQ Excel file (e.g., GM_GQ_2022.xlsx)'
+        help='Path to the Canadian GM_GQ regulatory return file (Excel or CSV format)'
     )
     
     parser.add_argument(
         '--report-type',
         required=True,
         choices=['lbsr', 'lbsn'],
-        help='Type of report to generate: lbsr (residency) or lbsn (nationality)'
+        help='BIS LBS report type: lbsr (residency-based) or lbsn (nationality-based)'
     )
     
     parser.add_argument(
         '--output',
         required=True,
-        help='Output path for the generated CSV report'
+        help='Output path for the BIS LBS DSD compliant CSV report'
     )
     
     parser.add_argument(
@@ -102,7 +107,7 @@ Examples:
     parser.add_argument(
         '--validate-only',
         action='store_true',
-        help='Only validate the mapping rules without generating output'
+        help='Validate mapping rules and data integrity without generating output (regulatory compliance check)'
     )
     
     args = parser.parse_args()
