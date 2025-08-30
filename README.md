@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="logos/bis_gq_lbs_mapper.png" alt="GQ to BIS LBS Logo" width="600"/>
+</div>
+
 # BIS GQ Mapper (bis-gq-mapper)
 
 A Python utility to automate the mapping of the Canadian regulatory return GM_GQ to the Bank for International Settlements (BIS) Locational Banking Statistics (LBS) Data Structure Definition (DSD).
